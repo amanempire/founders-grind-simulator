@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +9,7 @@ import { Trophy, Brain, Target } from "lucide-react";
 const Complete = () => {
   const navigate = useNavigate();
   const [gameState, setGameState] = useState<GameState | null>(null);
+  const [showCreatorMessage, setShowCreatorMessage] = useState(false);
 
   useEffect(() => {
     const state = loadGameState();
@@ -23,6 +23,10 @@ const Complete = () => {
   const handleRestart = () => {
     clearGameState();
     navigate('/');
+  };
+
+  const handleDontClick = () => {
+    setShowCreatorMessage(!showCreatorMessage);
   };
 
   const getFinalScore = () => {
@@ -102,13 +106,41 @@ const Complete = () => {
             and the challenges you overcame have shaped your understanding of what it means to build something from nothing.
           </p>
           
-          <Button 
-            onClick={handleRestart}
-            size="lg"
-            className="founder-gradient text-white text-xl px-12 py-6 rounded-xl hover:scale-105 transition-transform duration-200"
-          >
-            Start New Journey
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              onClick={handleRestart}
+              size="lg"
+              className="founder-gradient text-white text-xl px-12 py-6 rounded-xl hover:scale-105 transition-transform duration-200"
+            >
+              Start New Journey
+            </Button>
+            
+            <Button 
+              onClick={handleDontClick}
+              variant="outline"
+              size="lg"
+              className="text-xl px-8 py-6 rounded-xl hover:scale-105 transition-transform duration-200 border-2"
+            >
+              Don't click
+            </Button>
+          </div>
+
+          {showCreatorMessage && (
+            <Card className="mt-8 p-8 glass-effect max-w-2xl mx-auto animate-fade-in">
+              <div className="text-left space-y-4">
+                <h3 className="text-2xl font-bold founder-text-gradient mb-4">A Message from the Creator</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  I'm <strong>Aman Tiwari</strong> - Creator of this game and there are more such to come. 
+                  I have a unique way of learning and thus wanted to share, will be posting startup 
+                  case studies on the way, resources related to startup after each lesson.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  There's too much that this platform will see, join with me to stay together and 
+                  support me. Thanks for the read.
+                </p>
+              </div>
+            </Card>
+          )}
         </div>
       </div>
     </div>
