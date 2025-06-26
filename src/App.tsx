@@ -9,6 +9,7 @@ import ModeSelection from "./pages/ModeSelection";
 import CharacterSelection from "./pages/CharacterSelection";
 import Dashboard from "./pages/Dashboard";
 import Complete from "./pages/Complete";
+import Creator from "./pages/Creator";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/select" element={<CharacterSelection />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/complete" element={<Complete />} />
+          <Route path="/creator" element={<Creator />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

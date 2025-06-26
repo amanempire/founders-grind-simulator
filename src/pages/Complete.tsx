@@ -10,7 +10,6 @@ import { Trophy, Brain, Target } from "lucide-react";
 const Complete = () => {
   const navigate = useNavigate();
   const [gameState, setGameState] = useState<GameState | null>(null);
-  const [showCreatorMessage, setShowCreatorMessage] = useState(false);
 
   useEffect(() => {
     const state = loadGameState();
@@ -27,7 +26,7 @@ const Complete = () => {
   };
 
   const handleDontClick = () => {
-    setShowCreatorMessage(!showCreatorMessage);
+    navigate('/creator');
   };
 
   const getFinalScore = () => {
@@ -125,23 +124,6 @@ const Complete = () => {
               Don't click
             </Button>
           </div>
-
-          {showCreatorMessage && (
-            <Card className="mt-8 p-8 glass-effect max-w-2xl mx-auto animate-fade-in">
-              <div className="text-left space-y-4">
-                <h3 className="text-2xl font-bold founder-text-gradient mb-4">A Message from the Creator</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  I'm <strong>Aman Tiwari</strong> - Creator of this game and there are more such to come. 
-                  I have a unique way of learning and thus wanted to share, will be posting startup 
-                  case studies on the way, resources related to startup after each lesson.
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  There's too much that this platform will see, join with me to stay together and 
-                  support me. Thanks for the read.
-                </p>
-              </div>
-            </Card>
-          )}
         </div>
       </div>
     </div>
