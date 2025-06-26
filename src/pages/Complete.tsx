@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
@@ -119,7 +120,7 @@ const Complete = () => {
               onClick={handleDontClick}
               variant="outline"
               size="lg"
-              className="text-xl px-8 py-6 rounded-xl hover:scale-105 transition-transform duration-200 border-2"
+              className="text-xl px-8 py-6 rounded-xl hover:scale-105 transition-transform duration-200 border-2 transform -rotate-2 animate-shake hover:animate-none"
             >
               Don't click
             </Button>
