@@ -309,29 +309,211 @@ export const ARCS: Arc[] = [
     scenarios: [
       {
         id: 1,
-        title: "The Co-founder Dilemma",
-        description: "You need a technical co-founder. Several options present themselves:",
+        title: "A proven engineer with a brilliant resume is arrogant, dismissive of your vision.",
+        description: "They have the skills but not the attitude. What's your move?",
         choices: [
           {
             id: 1,
-            text: "Partner with your brilliant but difficult friend",
-            effects: { time: -5, network: -10, cash: 0 },
-            consequence: "Talent with baggage. Handle with care.",
-            progressIncrease: 25
+            text: "Hire them — ship faster, risk culture.",
+            effects: { time: -10, network: 5, cash: -10 },
+            consequence: "Skill gets you to market. Ego poisons teams.",
+            progressIncrease: 10
           },
           {
             id: 2,
-            text: "Hire a seasoned developer with equity",
-            effects: { time: -10, network: 10, cash: -20 },
-            consequence: "Experience costs, but delivers results.",
-            progressIncrease: 35
+            text: "Pass on them, wait for culture fit.",
+            effects: { time: 10, network: -5, cash: 0 },
+            consequence: "Culture is slow ROI. Until crisis hits.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 2,
+        title: "Your best friend wants to cofound, but lacks the needed skill.",
+        description: "Trust vs competence. The eternal founder dilemma.",
+        choices: [
+          {
+            id: 1,
+            text: "Say yes, trust you'll upskill them.",
+            effects: { time: 5, network: 5, cash: -5 },
+            consequence: "Loyalty feels safe — till pressure breaks it.",
+            progressIncrease: 10
           },
           {
-            id: 3,
-            text: "Learn to code yourself",
-            effects: { time: -30, network: 0, cash: -5 },
-            consequence: "Self-reliance has its merits.",
-            progressIncrease: 40
+            id: 2,
+            text: "Say no, keep friendship intact.",
+            effects: { time: -5, network: -5, cash: 5 },
+            consequence: "Mixing money & friends breaks more than startups.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 3,
+        title: "Cofounder wants to move slow — small scope, avoid risk.",
+        description: "Vision alignment crisis. Speed vs safety.",
+        choices: [
+          {
+            id: 1,
+            text: "Agree, stay cautious.",
+            effects: { time: 10, network: -5, cash: -5 },
+            consequence: "Caution kills momentum. But buys survival.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Push hard, expand roadmap.",
+            effects: { time: -15, network: 5, cash: -10 },
+            consequence: "Aggression builds or burns.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 4,
+        title: "Early hire starts gossiping about you, morale drops.",
+        description: "Toxic behavior spreads fast in small teams.",
+        choices: [
+          {
+            id: 1,
+            text: "Fire instantly, show zero tolerance.",
+            effects: { time: 5, network: -10, cash: -5 },
+            consequence: "Culture is set by what you tolerate.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Have a private talk, give them a chance.",
+            effects: { time: -5, network: 10, cash: -5 },
+            consequence: "Grace wins loyalty. Or backfires.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 5,
+        title: "You're out of cash. Team asks for deferred salaries.",
+        description: "The ultimate test of team loyalty and trust.",
+        choices: [
+          {
+            id: 1,
+            text: "Promise backpay & keep them.",
+            effects: { time: 10, network: 5, cash: -20 },
+            consequence: "Deferred salaries build hidden debt.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Lay off & slim down.",
+            effects: { time: -5, network: -10, cash: 10 },
+            consequence: "Survive to fight again — with fewer scars.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 6,
+        title: "Cofounder secretly freelancing on side gigs.",
+        description: "Divided attention when focus is everything.",
+        choices: [
+          {
+            id: 1,
+            text: "Confront & issue ultimatum.",
+            effects: { time: -5, network: 0, cash: 0 },
+            consequence: "Focus is oxygen. Split focus, slow death.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Ignore it, hope they deliver.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Passive founders breed chaotic startups.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 7,
+        title: "You can hire a rockstar dev overseas, but barely vet them.",
+        description: "Speed vs security in hiring decisions.",
+        choices: [
+          {
+            id: 1,
+            text: "Do it for speed.",
+            effects: { time: -15, network: 0, cash: -15 },
+            consequence: "Cheap. Fast. Maybe also broken.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Hire local, slower but vetted.",
+            effects: { time: -5, network: 5, cash: -5 },
+            consequence: "Long-term trust pays.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 8,
+        title: "Cofounder wants 50-50 split, you've done 80% so far.",
+        description: "Equity negotiations test relationships and fairness.",
+        choices: [
+          {
+            id: 1,
+            text: "Agree to equal — keep peace.",
+            effects: { time: 5, network: 0, cash: -10 },
+            consequence: "Equal splits breed silent resentment.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Negotiate hard for fair split.",
+            effects: { time: -10, network: -5, cash: 5 },
+            consequence: "Tough talks now, fewer regrets later.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 9,
+        title: "You discover a team member padded expense reports.",
+        description: "Ethics violations in early-stage startups.",
+        choices: [
+          {
+            id: 1,
+            text: "Fire them instantly.",
+            effects: { time: 5, network: -5, cash: 10 },
+            consequence: "Ethics lines crossed once, never uncrossed.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Give them a second chance.",
+            effects: { time: -5, network: 5, cash: -10 },
+            consequence: "Compassion can cost. Or transform.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 10,
+        title: "Team is burned out. Next step?",
+        description: "When pushing hard meets human limits.",
+        choices: [
+          {
+            id: 1,
+            text: "Call a break — mandatory week off.",
+            effects: { time: 15, network: -5, cash: -10 },
+            consequence: "Burnout ignored becomes exit interviews.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Push through to MVP launch.",
+            effects: { time: -20, network: 0, cash: 5 },
+            consequence: "Ship. Or implode.",
+            progressIncrease: 10
           }
         ]
       }
