@@ -1,4 +1,3 @@
-
 export interface GameState {
   currentArc: number;
   character: Character | null;
@@ -72,57 +71,232 @@ export const ARCS: Arc[] = [
     scenarios: [
       {
         id: 1,
-        title: "The Spark",
-        description: "You're frustrated with existing solutions. Three paths emerge:",
+        title: "What's your starting point?",
+        description: "You want to build a startup. Where do you start?",
         choices: [
           {
             id: 1,
-            text: "Research the market deeply for 3 months",
-            effects: { time: -20, network: 5, cash: -5 },
-            consequence: "Thorough research pays off with market insights.",
-            progressIncrease: 35
+            text: "Scratch your own itch (personal pain)",
+            effects: { time: 10, network: 0, cash: 0 },
+            consequence: "Solving your own pain gives clarity. But you might be the only user.",
+            progressIncrease: 10
           },
           {
             id: 2,
-            text: "Build a quick prototype immediately",
-            effects: { time: -15, network: 0, cash: -10 },
-            consequence: "Fast execution beats perfect planning.",
-            progressIncrease: 30
+            text: "Copy a trending startup (clone model)",
+            effects: { time: 0, network: 10, cash: 5 },
+            consequence: "Trends grow fast — but competition eats you alive.",
+            progressIncrease: 10
           },
           {
             id: 3,
-            text: "Talk to 50 potential customers first",
+            text: "Ask your friends about problems",
             effects: { time: -10, network: 15, cash: 0 },
-            consequence: "Customer validation guides your direction.",
-            progressIncrease: 35
+            consequence: "Talking to others opens eyes — and markets.",
+            progressIncrease: 10
           }
         ]
       },
       {
         id: 2,
-        title: "Validation Reality",
-        description: "Your initial assumptions are being tested. What's your next move?",
+        title: "How do you choose what to work on?",
+        description: "You've listed 3 problem areas. How do you pick?",
         choices: [
           {
             id: 1,
-            text: "Pivot based on customer feedback",
-            effects: { time: -15, network: 10, cash: -5 },
-            consequence: "Flexibility keeps you relevant.",
-            progressIncrease: 35
+            text: "Pick the one you're most passionate about",
+            effects: { time: 5, network: 0, cash: 0 },
+            consequence: "Passion keeps you going. But is there demand?",
+            progressIncrease: 10
           },
           {
             id: 2,
-            text: "Double down on original vision",
-            effects: { time: -10, network: -5, cash: -10 },
-            consequence: "Sometimes conviction pays off.",
-            progressIncrease: 30
+            text: "Pick the biggest market",
+            effects: { time: -5, network: 5, cash: 5 },
+            consequence: "Market size matters — but you'll be one of many.",
+            progressIncrease: 10
           },
           {
             id: 3,
-            text: "Test multiple variations simultaneously",
-            effects: { time: -25, network: 5, cash: -15 },
-            consequence: "Comprehensive testing provides clarity.",
-            progressIncrease: 40
+            text: "Pick what your friends would pay for",
+            effects: { time: -5, network: 10, cash: 0 },
+            consequence: "Start with users who trust you. That's your edge.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 3,
+        title: "You have 2 ideas — one familiar, one bold. Which one?",
+        description: "Two paths diverge in front of you.",
+        choices: [
+          {
+            id: 1,
+            text: "Stick with what you know",
+            effects: { time: 10, network: 0, cash: 0 },
+            consequence: "Familiar terrain is safer. But are you playing small?",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Take the bold one, high risk-high reward",
+            effects: { time: -10, network: 10, cash: -10 },
+            consequence: "Disruption needs courage. And capital.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 4,
+        title: "How do you validate your idea?",
+        description: "Time to test if your idea has legs.",
+        choices: [
+          {
+            id: 1,
+            text: "Talk to 10 potential users",
+            effects: { time: -15, network: 10, cash: 0 },
+            consequence: "Validation saves time. Even when it hurts.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Build an MVP and see who uses it",
+            effects: { time: -25, network: 0, cash: -10 },
+            consequence: "Building is tempting. But feedback is gold.",
+            progressIncrease: 10
+          },
+          {
+            id: 3,
+            text: "Run a poll on LinkedIn",
+            effects: { time: -5, network: 5, cash: 0 },
+            consequence: "Polls are noisy signals — but quick and free.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 5,
+        title: "You got mixed feedback. What do you do?",
+        description: "The feedback is confusing and contradictory.",
+        choices: [
+          {
+            id: 1,
+            text: "Ignore it. Trust your gut.",
+            effects: { time: 0, network: -5, cash: -5 },
+            consequence: "Conviction is good. Arrogance isn't.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Reframe the idea and re-test",
+            effects: { time: -10, network: 10, cash: -5 },
+            consequence: "The best ideas often evolve.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 6,
+        title: "A competitor just launched with funding. Reaction?",
+        description: "Your biggest fear just happened.",
+        choices: [
+          {
+            id: 1,
+            text: "Panic and pivot",
+            effects: { time: -5, network: -10, cash: -5 },
+            consequence: "Reacting without strategy burns more than time.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Double down with a better angle",
+            effects: { time: -15, network: 5, cash: -10 },
+            consequence: "Being different > being first.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 7,
+        title: "How do you test for willingness to pay?",
+        description: "Time to see if people will actually pay.",
+        choices: [
+          {
+            id: 1,
+            text: "Pre-sell on a Notion page",
+            effects: { time: -10, network: 10, cash: 10 },
+            consequence: "Payment = validation. Nothing else comes close.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Offer a free beta",
+            effects: { time: -5, network: 15, cash: -5 },
+            consequence: "Free brings users — but not necessarily customers.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 8,
+        title: "You've validated demand. What now?",
+        description: "Success! People want what you're building.",
+        choices: [
+          {
+            id: 1,
+            text: "Register a company and get serious",
+            effects: { time: -10, network: 0, cash: -20 },
+            consequence: "Legal structure is commitment. But wait till you must.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Keep it lean and move fast",
+            effects: { time: 5, network: 0, cash: 10 },
+            consequence: "Speed and learning beat paperwork early on.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 9,
+        title: "You're getting attention. What name do you choose?",
+        description: "Time to brand your creation.",
+        choices: [
+          {
+            id: 1,
+            text: "Memorable and brandable",
+            effects: { time: -5, network: 5, cash: -5 },
+            consequence: "Your name is your first impression.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Functional and SEO-friendly",
+            effects: { time: -5, network: 0, cash: 5 },
+            consequence: "Clarity wins over cleverness — especially online.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 10,
+        title: "You're now 80% sure. How do you commit?",
+        description: "The moment of truth arrives.",
+        choices: [
+          {
+            id: 1,
+            text: "Block off 6 months full-time",
+            effects: { time: -50, network: 0, cash: -20 },
+            consequence: "All-in is a risk. But sometimes it's the only way.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Work part-time, validate more",
+            effects: { time: -20, network: 5, cash: -5 },
+            consequence: "Side hustle mode is safe — but slow.",
+            progressIncrease: 10
           }
         ]
       }
