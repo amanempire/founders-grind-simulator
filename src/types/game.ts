@@ -526,29 +526,211 @@ export const ARCS: Arc[] = [
     scenarios: [
       {
         id: 1,
-        title: "Launch Strategy",
-        description: "Your MVP is ready. How do you introduce it to the world?",
+        title: "You have a working prototype.",
+        description: "Your top early tester says it's confusing.",
         choices: [
           {
             id: 1,
-            text: "Soft launch to friends and family",
-            effects: { time: -5, network: 5, cash: 0 },
-            consequence: "Safe start with honest feedback.",
-            progressIncrease: 30
+            text: "Scrap weeks of work to rebuild UX?",
+            effects: { time: -20, network: 5, cash: -10 },
+            consequence: "Is one user enough signal?",
+            progressIncrease: 10
           },
           {
             id: 2,
-            text: "Big launch on Product Hunt",
-            effects: { time: -15, network: 20, cash: -10 },
-            consequence: "High risk, high reward visibility.",
-            progressIncrease: 40
+            text: "Ship as is, hoping wider users will adapt?",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Risk massive churn for speed.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 2,
+        title: "You can only afford ONE:",
+        description: "Choose your next hire carefully.",
+        choices: [
+          {
+            id: 1,
+            text: "Hire a growth hacker to rapidly get signups.",
+            effects: { time: -10, network: 20, cash: -20 },
+            consequence: "Users come. Will they stay?",
+            progressIncrease: 10
           },
           {
-            id: 3,
-            text: "Direct outreach to target customers",
-            effects: { time: -20, network: 15, cash: 0 },
-            consequence: "Personal touch builds relationships.",
-            progressIncrease: 35
+            id: 2,
+            text: "Hire a senior engineer to bulletproof your backend.",
+            effects: { time: -20, network: 0, cash: -15 },
+            consequence: "Stable product. Maybe no one tries it.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 3,
+        title: "A beta user offered to introduce you to an influencer — IF you give them a special feature that no one else gets.",
+        description: "Special treatment for potential viral growth.",
+        choices: [
+          {
+            id: 1,
+            text: "Agree to build a custom feature.",
+            effects: { time: -15, network: 15, cash: -5 },
+            consequence: "Prioritize one user over your roadmap.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Decline. Keep your product focused.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Risk losing potential viral growth.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 4,
+        title: "You've gathered tons of feature requests.",
+        description: "You can't build all.",
+        choices: [
+          {
+            id: 1,
+            text: "Choose features that excite YOU most.",
+            effects: { time: -15, network: 0, cash: -5 },
+            consequence: "Founder passion sometimes misses the market.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Build only what 3+ users have explicitly asked for.",
+            effects: { time: -10, network: 10, cash: -5 },
+            consequence: "Play it safe. Could be uninspiring.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 5,
+        title: "Your site is ugly but functional.",
+        description: "A designer offers to overhaul it for free, but needs full creative control.",
+        choices: [
+          {
+            id: 1,
+            text: "Say yes, lose control over branding.",
+            effects: { time: -10, network: 5, cash: 0 },
+            consequence: "Fresh look. Might hate it later.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Say no, keep your rough design.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "MVP might flop on first impressions.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 6,
+        title: "A competitor launches with a polished app.",
+        description: "Their pricing undercuts you.",
+        choices: [
+          {
+            id: 1,
+            text: "Drop your price to stay competitive.",
+            effects: { time: -5, network: 5, cash: -15 },
+            consequence: "Race to the bottom on margins.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Keep your price, justify on quality.",
+            effects: { time: 0, network: -5, cash: 0 },
+            consequence: "Risk customers flocking to cheaper option.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 7,
+        title: "You're struggling with churn.",
+        description: "How do you handle churned users?",
+        choices: [
+          {
+            id: 1,
+            text: "Email all churned users, offer a 50% discount to return.",
+            effects: { time: -10, network: 10, cash: -10 },
+            consequence: "Might win some. Might look desperate.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Let them go, focus on improving value first.",
+            effects: { time: -15, network: -5, cash: 5 },
+            consequence: "Patience or death by slow bleed.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 8,
+        title: "A well-known blogger offers to write about you.",
+        description: "...but only if you fake some success metrics.",
+        choices: [
+          {
+            id: 1,
+            text: "Do it — fake it till you make it.",
+            effects: { time: -5, network: 15, cash: 0 },
+            consequence: "Could skyrocket. Or wreck your rep.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Say no — keep your integrity.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Build slow. Sleep easy.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 9,
+        title: "Your product works, but retention is terrible.",
+        description: "What's your next move?",
+        choices: [
+          {
+            id: 1,
+            text: "Double down on marketing to widen funnel.",
+            effects: { time: -10, network: 15, cash: -20 },
+            consequence: "Masking leaks with volume.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Pause growth, overhaul onboarding.",
+            effects: { time: -20, network: -5, cash: -5 },
+            consequence: "Slow now, might pay later.",
+            progressIncrease: 10
+          }
+        ]
+      },
+      {
+        id: 10,
+        title: "You get an acquisition offer.",
+        description: "Small payout, would cover your last 6 months burn.",
+        choices: [
+          {
+            id: 1,
+            text: "Sell, cash out, maybe regret forever.",
+            effects: { time: 20, network: -10, cash: 50 },
+            consequence: "Secure bank account. Unfinished dream.",
+            progressIncrease: 10
+          },
+          {
+            id: 2,
+            text: "Decline, bet on scaling bigger.",
+            effects: { time: -15, network: 5, cash: -5 },
+            consequence: "Could be a unicorn. Or roadkill.",
+            progressIncrease: 10
           }
         ]
       }
