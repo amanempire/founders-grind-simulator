@@ -1261,29 +1261,253 @@ export const ARCS: Arc[] = [
     scenarios: [
       {
         id: 1,
-        title: "The Exit Opportunity",
-        description: "A major acquisition offer lands on your desk:",
+        title: "Your product's finally stable. Revenue's climbing, but ops is messy.",
+        description: "A trusted advisor says: \"If you want to scale fast, hire a COO now.\"",
         choices: [
           {
             id: 1,
-            text: "Accept the offer - secure the win",
-            effects: { time: -5, network: 15, cash: 50 },
-            consequence: "Success defined, legacy secured.",
-            progressIncrease: 50
+            text: "Hire a seasoned COO.",
+            effects: { time: -15, network: 10, cash: -30 },
+            consequence: "Burn goes up. Operations might soar.",
+            progressIncrease: 8
           },
           {
             id: 2,
-            text: "Hold out for IPO",
-            effects: { time: -25, network: 10, cash: -20 },
-            consequence: "Bigger risks, bigger rewards.",
-            progressIncrease: 45
+            text: "Stay scrappy, keep full control.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Cheap. Risk imploding under chaos.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 2,
+        title: "Your new COO pushes to expand internationally immediately.",
+        description: "Your local market's still growing, but they want to go global now.",
+        choices: [
+          {
+            id: 1,
+            text: "Greenlight global expansion.",
+            effects: { time: -20, network: 20, cash: -40 },
+            consequence: "Big swing. Might overextend.",
+            progressIncrease: 8
           },
           {
-            id: 3,
-            text: "Stay independent and keep building",
+            id: 2,
+            text: "Focus on dominating local first.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Safer. Might miss global window.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 3,
+        title: "You start seeing churn creeping up.",
+        description: "Your growth lead proposes a radical pivot in pricing to lock in users.",
+        choices: [
+          {
+            id: 1,
+            text: "Overhaul pricing model.",
             effects: { time: -15, network: 5, cash: -10 },
-            consequence: "The journey continues.",
-            progressIncrease: 40
+            consequence: "Might save retention. Confuses loyal customers.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Keep current model.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Steady. Might bleed out slowly.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 4,
+        title: "Growth slows. An acquirer informally reaches out.",
+        description: "\"We're interested — but we'd want to keep your team, not your tech.\"",
+        choices: [
+          {
+            id: 1,
+            text: "Start serious talks.",
+            effects: { time: -10, network: 10, cash: 0 },
+            consequence: "Team might get jobs. Your product dies.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Refuse. Keep independent path.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Vision intact. Risk total failure.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 5,
+        title: "Your COO suggests buying out a smaller competitor.",
+        description: "Bolt on new revenue through acquisition.",
+        choices: [
+          {
+            id: 1,
+            text: "Acquire them.",
+            effects: { time: -30, network: 15, cash: -50 },
+            consequence: "Massive stretch. Might supercharge scale.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Say no. Conserve cash.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Stay lean. Might get outflanked.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 6,
+        title: "Integration is rocky. The acquired team's culture clashes.",
+        description: "Your Slack's a war zone.",
+        choices: [
+          {
+            id: 1,
+            text: "Do a painful reorg, replacing half the acquired team.",
+            effects: { time: -20, network: -10, cash: -10 },
+            consequence: "Culture resets. Bad PR risk.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Try to blend cultures, give it time.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Might mellow out. Or explode later.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 7,
+        title: "A competitor launches a feature almost identical to yours.",
+        description: "But with viral growth mechanics. Your growth team proposes a quick clone.",
+        choices: [
+          {
+            id: 1,
+            text: "Clone & ship fast.",
+            effects: { time: -15, network: 5, cash: -20 },
+            consequence: "Catch wave. Risk stability.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Ignore it. Stick to your core differentiators.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Might look stale.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 8,
+        title: "VCs start quietly hinting at pushing you toward an exit.",
+        description: "One partner says: \"This is your window. Strike while froth is high — or valuations will dry up.\"",
+        choices: [
+          {
+            id: 1,
+            text: "Hire bankers, start prepping an exit.",
+            effects: { time: -15, network: 15, cash: -10 },
+            consequence: "Signals market. Costs big.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Hold off. Try to grow into unicorn status.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "High stakes patience.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 9,
+        title: "During diligence, they flag your customer concentration risk.",
+        description: "Your top 3 clients make up 60% of revenue.",
+        choices: [
+          {
+            id: 1,
+            text: "Offer discounts to diversify clients.",
+            effects: { time: -15, network: 5, cash: -20 },
+            consequence: "Might broaden base. Hurts short-term cash.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Do nothing, hope market overlooks it.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Risk deal tanking.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 10,
+        title: "Buyers want heavy earn-outs tied to hitting future metrics.",
+        description: "If you miss, your payout slashes in half.",
+        choices: [
+          {
+            id: 1,
+            text: "Negotiate softer terms, risk pushing them away.",
+            effects: { time: -10, network: -5, cash: 0 },
+            consequence: "Might lose buyer. Might protect sanity.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Accept tough earn-out.",
+            effects: { time: 5, network: 5, cash: 50 },
+            consequence: "Locked golden handcuffs.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 11,
+        title: "Post-LOI, your team starts quietly job hunting.",
+        description: "They're scared if the exit fails, they're stuck.",
+        choices: [
+          {
+            id: 1,
+            text: "Call an all-hands, promise retention bonuses.",
+            effects: { time: -10, network: 10, cash: -30 },
+            consequence: "Buys loyalty. Expensive.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Ignore it. Let chips fall.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Might cause team exodus.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 12,
+        title: "At the closing table, the acquirer adds a last-minute demand.",
+        description: "\"We want to lock you in for 4 years with a non-compete that covers the entire tech sector.\"",
+        choices: [
+          {
+            id: 1,
+            text: "Sign it. Take the money, leave your playground.",
+            effects: { time: -5, network: 0, cash: 100 },
+            consequence: "Personal freedom crushed. Bank account glows.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Walk away from the exit.",
+            effects: { time: 10, network: -20, cash: 0 },
+            consequence: "Stay true to future possibilities. Maybe risk everything.",
+            progressIncrease: 8
           }
         ]
       }
