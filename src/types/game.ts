@@ -743,29 +743,253 @@ export const ARCS: Arc[] = [
     scenarios: [
       {
         id: 1,
-        title: "The Plateau",
-        description: "Growth has stalled. Your team is burning out. Critical decision time:",
+        title: "Your CTO knocks on your door at midnight, eyes bloodshot.",
+        description: "\"If we skip writing tests, we can launch in two weeks. But… we're blind to bugs.\" You look at the burn chart. Cash runs out in a month.",
         choices: [
           {
             id: 1,
-            text: "Push harder - work 80 hour weeks",
-            effects: { time: -25, network: -10, cash: -5 },
-            consequence: "Burnout looms, but sometimes it works.",
-            progressIncrease: 30
+            text: "\"Do it. We'll deal with chaos later.\"",
+            effects: { time: -20, network: 5, cash: -5 },
+            consequence: "Speed now. Possible catastrophic bugs later.",
+            progressIncrease: 8
           },
           {
             id: 2,
-            text: "Take a step back and strategize",
-            effects: { time: -10, network: 5, cash: -10 },
-            consequence: "Strategic thinking saves resources.",
-            progressIncrease: 35
+            text: "\"No. We'll build it right.\"",
+            effects: { time: -40, network: -5, cash: -10 },
+            consequence: "Slow. Solid. Hope you last long enough to matter.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 2,
+        title: "Your cofounder tells you privately:",
+        description: "\"I think we should exaggerate our user numbers for the next pitch. Everyone does it. We'll fix it before diligence.\"",
+        choices: [
+          {
+            id: 1,
+            text: "\"Alright… survival first.\"",
+            effects: { time: -10, network: 15, cash: 30 },
+            consequence: "Investors hook. Integrity cracks.",
+            progressIncrease: 8
           },
           {
-            id: 3,
-            text: "Bring in an experienced advisor",
-            effects: { time: -5, network: 20, cash: -15 },
-            consequence: "Experience guides the way forward.",
-            progressIncrease: 40
+            id: 2,
+            text: "\"No lies. Even small ones.\"",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Might stay poor. Sleep well though.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 3,
+        title: "Your best developer's father falls critically ill.",
+        description: "They ask for a month off, unpaid if needed.",
+        choices: [
+          {
+            id: 1,
+            text: "\"Go. Family first.\"",
+            effects: { time: -20, network: 10, cash: -5 },
+            consequence: "Loyalty grows. Deadlines slip.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "\"I need you here. I'm sorry.\"",
+            effects: { time: -5, network: -20, cash: 0 },
+            consequence: "Cold founder. Warm burn rate.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 4,
+        title: "Your dashboard shows metrics dropping fast.",
+        description: "An investor meeting is tomorrow. At 3AM, you find a hack to fudge churn rates temporarily.",
+        choices: [
+          {
+            id: 1,
+            text: "Deploy the fudge.",
+            effects: { time: -5, network: 15, cash: 20 },
+            consequence: "Short-term win. Possible long-term explosion.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Leave it raw. Face the truth.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Might lose funding. Might keep soul.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 5,
+        title: "Your partner cries quietly beside you in bed.",
+        description: "\"I barely see you anymore. When was the last time we just... existed?\"",
+        choices: [
+          {
+            id: 1,
+            text: "\"I'll cancel tomorrow's meetings. Let's breathe.\"",
+            effects: { time: 10, network: -5, cash: -5 },
+            consequence: "Love rekindles. Pipeline slows.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "\"I promise. After we raise.\"",
+            effects: { time: -10, network: 5, cash: 0 },
+            consequence: "Promises can be cold comfort.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 6,
+        title: "A desperate competitor emails you a partnership proposal — they're floundering, might sink.",
+        description: "\"Let's merge resources. We'll survive together.\"",
+        choices: [
+          {
+            id: 1,
+            text: "Merge. Might share the throne.",
+            effects: { time: -20, network: 20, cash: -10 },
+            consequence: "Survive together, or drown twice as big.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Decline. Let them die.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Colder world. Bigger slice if you last.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 7,
+        title: "Your lead designer's leaving for a corporate job.",
+        description: "\"I can stay… if you match their offer. It's 3x what I earn here.\"",
+        choices: [
+          {
+            id: 1,
+            text: "Find the cash, keep them.",
+            effects: { time: -10, network: 5, cash: -30 },
+            consequence: "Huge morale boost. Huge burn hit.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Wish them luck, hold the line.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Might inspire others to jump too.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 8,
+        title: "You're beyond exhausted.",
+        description: "Doctor says you're borderline hypertensive. \"Take a month off or risk permanent damage.\"",
+        choices: [
+          {
+            id: 1,
+            text: "Take the break.",
+            effects: { time: 30, network: -10, cash: -10 },
+            consequence: "Health resets. Biz might crumble.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Ignore it. Chase the sprint.",
+            effects: { time: -15, network: 5, cash: 5 },
+            consequence: "Founder martyrdom.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 9,
+        title: "Your app accidentally exposed some user data.",
+        description: "No one's noticed yet.",
+        choices: [
+          {
+            id: 1,
+            text: "Silently patch & pray.",
+            effects: { time: -5, network: 0, cash: 0 },
+            consequence: "Cheap. Ethically murky. Might explode later.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Disclose immediately.",
+            effects: { time: -15, network: -5, cash: -10 },
+            consequence: "Honesty costs.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 10,
+        title: "You've been offered to join a big accelerator.",
+        description: "But it requires relocating across the country, away from your fragile team.",
+        choices: [
+          {
+            id: 1,
+            text: "Go, chase the opportunity.",
+            effects: { time: -10, network: 20, cash: 10 },
+            consequence: "Might strain the team to breaking.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Stay, grow roots first.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Miss your shot. Keep your home base.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 11,
+        title: "You're offered an exclusive deal by a huge enterprise client.",
+        description: "They demand you kill your consumer app to focus 100% on them.",
+        choices: [
+          {
+            id: 1,
+            text: "Pivot. Become their tech team.",
+            effects: { time: -20, network: 30, cash: 50 },
+            consequence: "Safe. Soul might rot.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Refuse. Keep your original dream alive.",
+            effects: { time: 5, network: -10, cash: -5 },
+            consequence: "Fight for vision. Fight for scraps.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 12,
+        title: "At 4AM, alone in your dark office, you stare at the cash forecast.",
+        description: "\"There's maybe 3 months left. Do you tell your team the brutal truth, or keep morale intact and hope?\"",
+        choices: [
+          {
+            id: 1,
+            text: "Tell them everything.",
+            effects: { time: -5, network: 10, cash: -5 },
+            consequence: "Honesty builds unbreakable bonds. Or mass panic.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Keep the burden solo.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Protect them. Or betray them later.",
+            progressIncrease: 8
           }
         ]
       }
