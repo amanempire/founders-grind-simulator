@@ -1,3 +1,4 @@
+
 export interface GameState {
   currentArc: number;
   character: Character | null;
@@ -44,22 +45,22 @@ export const CHARACTERS: Character[] = [
   {
     name: "Student",
     description: "Fresh perspective, unlimited time, but limited resources and connections",
-    initialResources: { time: 90, network: 20, cash: 10 }
+    initialResources: { time: 80, network: 15, cash: 5 }
   },
   {
     name: "Corporate",
     description: "Strong network and steady income, but time is your enemy",
-    initialResources: { time: 50, network: 80, cash: 70 }
+    initialResources: { time: 25, network: 70, cash: 60 }
   },
   {
     name: "Freelancer",
     description: "Balanced approach with moderate resources across all areas",
-    initialResources: { time: 80, network: 50, cash: 40 }
+    initialResources: { time: 60, network: 40, cash: 35 }
   },
   {
     name: "Ex-Founder",
     description: "Battle-tested with connections and capital, but time is precious",
-    initialResources: { time: 30, network: 90, cash: 80 }
+    initialResources: { time: 20, network: 85, cash: 75 }
   }
 ];
 
@@ -77,21 +78,21 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Scratch your own itch (personal pain)",
-            effects: { time: 10, network: 0, cash: 0 },
+            effects: { time: -5, network: 0, cash: 0 },
             consequence: "Solving your own pain gives clarity. But you might be the only user.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Copy a trending startup (clone model)",
-            effects: { time: 0, network: 10, cash: 5 },
+            effects: { time: -3, network: 5, cash: -2 },
             consequence: "Trends grow fast — but competition eats you alive.",
             progressIncrease: 10
           },
           {
             id: 3,
             text: "Ask your friends about problems",
-            effects: { time: -10, network: 15, cash: 0 },
+            effects: { time: -8, network: 8, cash: 0 },
             consequence: "Talking to others opens eyes — and markets.",
             progressIncrease: 10
           }
@@ -105,21 +106,21 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Pick the one you're most passionate about",
-            effects: { time: 5, network: 0, cash: 0 },
+            effects: { time: -3, network: 0, cash: 0 },
             consequence: "Passion keeps you going. But is there demand?",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Pick the biggest market",
-            effects: { time: -5, network: 5, cash: 5 },
+            effects: { time: -5, network: 3, cash: -3 },
             consequence: "Market size matters — but you'll be one of many.",
             progressIncrease: 10
           },
           {
             id: 3,
             text: "Pick what your friends would pay for",
-            effects: { time: -5, network: 10, cash: 0 },
+            effects: { time: -4, network: 6, cash: 0 },
             consequence: "Start with users who trust you. That's your edge.",
             progressIncrease: 10
           }
@@ -133,14 +134,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Stick with what you know",
-            effects: { time: 10, network: 0, cash: 0 },
+            effects: { time: -2, network: 0, cash: 0 },
             consequence: "Familiar terrain is safer. But are you playing small?",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Take the bold one, high risk-high reward",
-            effects: { time: -10, network: 10, cash: -10 },
+            effects: { time: -6, network: 4, cash: -5 },
             consequence: "Disruption needs courage. And capital.",
             progressIncrease: 10
           }
@@ -154,21 +155,21 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Talk to 10 potential users",
-            effects: { time: -15, network: 10, cash: 0 },
+            effects: { time: -10, network: 6, cash: 0 },
             consequence: "Validation saves time. Even when it hurts.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Build an MVP and see who uses it",
-            effects: { time: -25, network: 0, cash: -10 },
+            effects: { time: -15, network: 0, cash: -8 },
             consequence: "Building is tempting. But feedback is gold.",
             progressIncrease: 10
           },
           {
             id: 3,
             text: "Run a poll on LinkedIn",
-            effects: { time: -5, network: 5, cash: 0 },
+            effects: { time: -2, network: 3, cash: 0 },
             consequence: "Polls are noisy signals — but quick and free.",
             progressIncrease: 10
           }
@@ -182,14 +183,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Ignore it. Trust your gut.",
-            effects: { time: 0, network: -5, cash: -5 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Conviction is good. Arrogance isn't.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Reframe the idea and re-test",
-            effects: { time: -10, network: 10, cash: -5 },
+            effects: { time: -8, network: 5, cash: -2 },
             consequence: "The best ideas often evolve.",
             progressIncrease: 10
           }
@@ -203,14 +204,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Panic and pivot",
-            effects: { time: -5, network: -10, cash: -5 },
+            effects: { time: -8, network: -5, cash: -3 },
             consequence: "Reacting without strategy burns more than time.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Double down with a better angle",
-            effects: { time: -15, network: 5, cash: -10 },
+            effects: { time: -12, network: 3, cash: -6 },
             consequence: "Being different > being first.",
             progressIncrease: 10
           }
@@ -224,14 +225,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Pre-sell on a Notion page",
-            effects: { time: -10, network: 10, cash: 10 },
+            effects: { time: -6, network: 8, cash: 5 },
             consequence: "Payment = validation. Nothing else comes close.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Offer a free beta",
-            effects: { time: -5, network: 15, cash: -5 },
+            effects: { time: -4, network: 10, cash: -3 },
             consequence: "Free brings users — but not necessarily customers.",
             progressIncrease: 10
           }
@@ -245,14 +246,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Register a company and get serious",
-            effects: { time: -10, network: 0, cash: -20 },
+            effects: { time: -8, network: 0, cash: -15 },
             consequence: "Legal structure is commitment. But wait till you must.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Keep it lean and move fast",
-            effects: { time: 5, network: 0, cash: 10 },
+            effects: { time: -2, network: 0, cash: 3 },
             consequence: "Speed and learning beat paperwork early on.",
             progressIncrease: 10
           }
@@ -266,14 +267,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Memorable and brandable",
-            effects: { time: -5, network: 5, cash: -5 },
+            effects: { time: -3, network: 4, cash: -5 },
             consequence: "Your name is your first impression.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Functional and SEO-friendly",
-            effects: { time: -5, network: 0, cash: 5 },
+            effects: { time: -2, network: 0, cash: 2 },
             consequence: "Clarity wins over cleverness — especially online.",
             progressIncrease: 10
           }
@@ -287,14 +288,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Block off 6 months full-time",
-            effects: { time: -50, network: 0, cash: -20 },
+            effects: { time: -30, network: 0, cash: -25 },
             consequence: "All-in is a risk. But sometimes it's the only way.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Work part-time, validate more",
-            effects: { time: -20, network: 5, cash: -5 },
+            effects: { time: -15, network: 3, cash: -8 },
             consequence: "Side hustle mode is safe — but slow.",
             progressIncrease: 10
           }
@@ -315,14 +316,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Hire them — ship faster, risk culture.",
-            effects: { time: -10, network: 5, cash: -10 },
+            effects: { time: 8, network: 3, cash: -20 },
             consequence: "Skill gets you to market. Ego poisons teams.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Pass on them, wait for culture fit.",
-            effects: { time: 10, network: -5, cash: 0 },
+            effects: { time: -5, network: -2, cash: 0 },
             consequence: "Culture is slow ROI. Until crisis hits.",
             progressIncrease: 10
           }
@@ -336,14 +337,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Say yes, trust you'll upskill them.",
-            effects: { time: 5, network: 5, cash: -5 },
+            effects: { time: -10, network: 5, cash: -15 },
             consequence: "Loyalty feels safe — till pressure breaks it.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Say no, keep friendship intact.",
-            effects: { time: -5, network: -5, cash: 5 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Mixing money & friends breaks more than startups.",
             progressIncrease: 10
           }
@@ -357,14 +358,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Agree, stay cautious.",
-            effects: { time: 10, network: -5, cash: -5 },
+            effects: { time: 3, network: -2, cash: 0 },
             consequence: "Caution kills momentum. But buys survival.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Push hard, expand roadmap.",
-            effects: { time: -15, network: 5, cash: -10 },
+            effects: { time: -12, network: 3, cash: -8 },
             consequence: "Aggression builds or burns.",
             progressIncrease: 10
           }
@@ -378,14 +379,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Fire instantly, show zero tolerance.",
-            effects: { time: 5, network: -10, cash: -5 },
+            effects: { time: -3, network: -8, cash: 5 },
             consequence: "Culture is set by what you tolerate.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Have a private talk, give them a chance.",
-            effects: { time: -5, network: 10, cash: -5 },
+            effects: { time: -5, network: 6, cash: -3 },
             consequence: "Grace wins loyalty. Or backfires.",
             progressIncrease: 10
           }
@@ -399,14 +400,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Promise backpay & keep them.",
-            effects: { time: 10, network: 5, cash: -20 },
+            effects: { time: 5, network: 8, cash: -30 },
             consequence: "Deferred salaries build hidden debt.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Lay off & slim down.",
-            effects: { time: -5, network: -10, cash: 10 },
+            effects: { time: -3, network: -12, cash: 15 },
             consequence: "Survive to fight again — with fewer scars.",
             progressIncrease: 10
           }
@@ -420,14 +421,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Confront & issue ultimatum.",
-            effects: { time: -5, network: 0, cash: 0 },
+            effects: { time: -3, network: 0, cash: 0 },
             consequence: "Focus is oxygen. Split focus, slow death.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Ignore it, hope they deliver.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 2, network: -6, cash: 0 },
             consequence: "Passive founders breed chaotic startups.",
             progressIncrease: 10
           }
@@ -441,14 +442,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Do it for speed.",
-            effects: { time: -15, network: 0, cash: -15 },
+            effects: { time: 10, network: 0, cash: -25 },
             consequence: "Cheap. Fast. Maybe also broken.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Hire local, slower but vetted.",
-            effects: { time: -5, network: 5, cash: -5 },
+            effects: { time: -8, network: 4, cash: -15 },
             consequence: "Long-term trust pays.",
             progressIncrease: 10
           }
@@ -462,14 +463,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Agree to equal — keep peace.",
-            effects: { time: 5, network: 0, cash: -10 },
+            effects: { time: 2, network: 5, cash: -5 },
             consequence: "Equal splits breed silent resentment.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Negotiate hard for fair split.",
-            effects: { time: -10, network: -5, cash: 5 },
+            effects: { time: -8, network: -3, cash: 3 },
             consequence: "Tough talks now, fewer regrets later.",
             progressIncrease: 10
           }
@@ -483,14 +484,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Fire them instantly.",
-            effects: { time: 5, network: -5, cash: 10 },
+            effects: { time: -2, network: -3, cash: 8 },
             consequence: "Ethics lines crossed once, never uncrossed.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Give them a second chance.",
-            effects: { time: -5, network: 5, cash: -10 },
+            effects: { time: -3, network: 3, cash: -6 },
             consequence: "Compassion can cost. Or transform.",
             progressIncrease: 10
           }
@@ -504,14 +505,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Call a break — mandatory week off.",
-            effects: { time: 15, network: -5, cash: -10 },
+            effects: { time: 8, network: 6, cash: -12 },
             consequence: "Burnout ignored becomes exit interviews.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Push through to MVP launch.",
-            effects: { time: -20, network: 0, cash: 5 },
+            effects: { time: -15, network: -3, cash: 0 },
             consequence: "Ship. Or implode.",
             progressIncrease: 10
           }
@@ -532,14 +533,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Scrap weeks of work to rebuild UX?",
-            effects: { time: -20, network: 5, cash: -10 },
+            effects: { time: -15, network: 3, cash: -8 },
             consequence: "Is one user enough signal?",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Ship as is, hoping wider users will adapt?",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 3, network: -3, cash: 0 },
             consequence: "Risk massive churn for speed.",
             progressIncrease: 10
           }
@@ -553,14 +554,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Hire a growth hacker to rapidly get signups.",
-            effects: { time: -10, network: 20, cash: -20 },
+            effects: { time: -5, network: 15, cash: -25 },
             consequence: "Users come. Will they stay?",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Hire a senior engineer to bulletproof your backend.",
-            effects: { time: -20, network: 0, cash: -15 },
+            effects: { time: -12, network: 0, cash: -20 },
             consequence: "Stable product. Maybe no one tries it.",
             progressIncrease: 10
           }
@@ -574,14 +575,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Agree to build a custom feature.",
-            effects: { time: -15, network: 15, cash: -5 },
+            effects: { time: -10, network: 12, cash: -5 },
             consequence: "Prioritize one user over your roadmap.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Decline. Keep your product focused.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -5, cash: 0 },
             consequence: "Risk losing potential viral growth.",
             progressIncrease: 10
           }
@@ -595,14 +596,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Choose features that excite YOU most.",
-            effects: { time: -15, network: 0, cash: -5 },
+            effects: { time: -10, network: 0, cash: -3 },
             consequence: "Founder passion sometimes misses the market.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Build only what 3+ users have explicitly asked for.",
-            effects: { time: -10, network: 10, cash: -5 },
+            effects: { time: -6, network: 6, cash: -2 },
             consequence: "Play it safe. Could be uninspiring.",
             progressIncrease: 10
           }
@@ -616,14 +617,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Say yes, lose control over branding.",
-            effects: { time: -10, network: 5, cash: 0 },
+            effects: { time: -8, network: 3, cash: 8 },
             consequence: "Fresh look. Might hate it later.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Say no, keep your rough design.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -2, cash: 0 },
             consequence: "MVP might flop on first impressions.",
             progressIncrease: 10
           }
@@ -637,14 +638,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Drop your price to stay competitive.",
-            effects: { time: -5, network: 5, cash: -15 },
+            effects: { time: -3, network: 2, cash: -12 },
             consequence: "Race to the bottom on margins.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Keep your price, justify on quality.",
-            effects: { time: 0, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Risk customers flocking to cheaper option.",
             progressIncrease: 10
           }
@@ -658,14 +659,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Email all churned users, offer a 50% discount to return.",
-            effects: { time: -10, network: 10, cash: -10 },
+            effects: { time: -6, network: 8, cash: -10 },
             consequence: "Might win some. Might look desperate.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Let them go, focus on improving value first.",
-            effects: { time: -15, network: -5, cash: 5 },
+            effects: { time: -10, network: -2, cash: 3 },
             consequence: "Patience or death by slow bleed.",
             progressIncrease: 10
           }
@@ -679,14 +680,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Do it — fake it till you make it.",
-            effects: { time: -5, network: 15, cash: 0 },
+            effects: { time: -2, network: 15, cash: 0 },
             consequence: "Could skyrocket. Or wreck your rep.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Say no — keep your integrity.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -8, cash: 0 },
             consequence: "Build slow. Sleep easy.",
             progressIncrease: 10
           }
@@ -700,14 +701,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Double down on marketing to widen funnel.",
-            effects: { time: -10, network: 15, cash: -20 },
+            effects: { time: -8, network: 12, cash: -20 },
             consequence: "Masking leaks with volume.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Pause growth, overhaul onboarding.",
-            effects: { time: -20, network: -5, cash: -5 },
+            effects: { time: -15, network: -2, cash: -5 },
             consequence: "Slow now, might pay later.",
             progressIncrease: 10
           }
@@ -721,14 +722,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Sell, cash out, maybe regret forever.",
-            effects: { time: 20, network: -10, cash: 50 },
+            effects: { time: 15, network: -8, cash: 40 },
             consequence: "Secure bank account. Unfinished dream.",
             progressIncrease: 10
           },
           {
             id: 2,
             text: "Decline, bet on scaling bigger.",
-            effects: { time: -15, network: 5, cash: -5 },
+            effects: { time: -10, network: 3, cash: -5 },
             consequence: "Could be a unicorn. Or roadkill.",
             progressIncrease: 10
           }
@@ -749,14 +750,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "\"Do it. We'll deal with chaos later.\"",
-            effects: { time: -20, network: 5, cash: -5 },
+            effects: { time: 12, network: 2, cash: -5 },
             consequence: "Speed now. Possible catastrophic bugs later.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "\"No. We'll build it right.\"",
-            effects: { time: -40, network: -5, cash: -10 },
+            effects: { time: -25, network: -2, cash: -12 },
             consequence: "Slow. Solid. Hope you last long enough to matter.",
             progressIncrease: 8
           }
@@ -770,14 +771,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "\"Alright… survival first.\"",
-            effects: { time: -10, network: 15, cash: 30 },
+            effects: { time: -5, network: 8, cash: 25 },
             consequence: "Investors hook. Integrity cracks.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "\"No lies. Even small ones.\"",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -5, cash: 0 },
             consequence: "Might stay poor. Sleep well though.",
             progressIncrease: 8
           }
@@ -791,14 +792,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "\"Go. Family first.\"",
-            effects: { time: -20, network: 10, cash: -5 },
+            effects: { time: -15, network: 8, cash: -8 },
             consequence: "Loyalty grows. Deadlines slip.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "\"I need you here. I'm sorry.\"",
-            effects: { time: -5, network: -20, cash: 0 },
+            effects: { time: 0, network: -15, cash: 0 },
             consequence: "Cold founder. Warm burn rate.",
             progressIncrease: 8
           }
@@ -812,14 +813,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Deploy the fudge.",
-            effects: { time: -5, network: 15, cash: 20 },
+            effects: { time: -3, network: 8, cash: 15 },
             consequence: "Short-term win. Possible long-term explosion.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Leave it raw. Face the truth.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -5, cash: 0 },
             consequence: "Might lose funding. Might keep soul.",
             progressIncrease: 8
           }
@@ -833,14 +834,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "\"I'll cancel tomorrow's meetings. Let's breathe.\"",
-            effects: { time: 10, network: -5, cash: -5 },
+            effects: { time: 8, network: -2, cash: -3 },
             consequence: "Love rekindles. Pipeline slows.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "\"I promise. After we raise.\"",
-            effects: { time: -10, network: 5, cash: 0 },
+            effects: { time: -8, network: 2, cash: 0 },
             consequence: "Promises can be cold comfort.",
             progressIncrease: 8
           }
@@ -854,14 +855,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Merge. Might share the throne.",
-            effects: { time: -20, network: 20, cash: -10 },
+            effects: { time: -15, network: 12, cash: -8 },
             consequence: "Survive together, or drown twice as big.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Decline. Let them die.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -6, cash: 0 },
             consequence: "Colder world. Bigger slice if you last.",
             progressIncrease: 8
           }
@@ -875,14 +876,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Find the cash, keep them.",
-            effects: { time: -10, network: 5, cash: -30 },
+            effects: { time: -5, network: 3, cash: -35 },
             consequence: "Huge morale boost. Huge burn hit.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Wish them luck, hold the line.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Might inspire others to jump too.",
             progressIncrease: 8
           }
@@ -896,14 +897,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Take the break.",
-            effects: { time: 30, network: -10, cash: -10 },
+            effects: { time: 20, network: -8, cash: -15 },
             consequence: "Health resets. Biz might crumble.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Ignore it. Chase the sprint.",
-            effects: { time: -15, network: 5, cash: 5 },
+            effects: { time: -12, network: 2, cash: 0 },
             consequence: "Founder martyrdom.",
             progressIncrease: 8
           }
@@ -917,14 +918,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Silently patch & pray.",
-            effects: { time: -5, network: 0, cash: 0 },
+            effects: { time: -3, network: 0, cash: 0 },
             consequence: "Cheap. Ethically murky. Might explode later.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Disclose immediately.",
-            effects: { time: -15, network: -5, cash: -10 },
+            effects: { time: -10, network: -3, cash: -8 },
             consequence: "Honesty costs.",
             progressIncrease: 8
           }
@@ -938,14 +939,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Go, chase the opportunity.",
-            effects: { time: -10, network: 20, cash: 10 },
+            effects: { time: -8, network: 15, cash: 8 },
             consequence: "Might strain the team to breaking.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Stay, grow roots first.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Miss your shot. Keep your home base.",
             progressIncrease: 8
           }
@@ -959,14 +960,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Pivot. Become their tech team.",
-            effects: { time: -20, network: 30, cash: 50 },
+            effects: { time: -15, network: 20, cash: 45 },
             consequence: "Safe. Soul might rot.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Refuse. Keep your original dream alive.",
-            effects: { time: 5, network: -10, cash: -5 },
+            effects: { time: 0, network: -8, cash: -3 },
             consequence: "Fight for vision. Fight for scraps.",
             progressIncrease: 8
           }
@@ -980,14 +981,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Tell them everything.",
-            effects: { time: -5, network: 10, cash: -5 },
+            effects: { time: -3, network: 6, cash: -5 },
             consequence: "Honesty builds unbreakable bonds. Or mass panic.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Keep the burden solo.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -8, cash: 0 },
             consequence: "Protect them. Or betray them later.",
             progressIncrease: 8
           }
@@ -1008,14 +1009,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Start prepping deck.",
-            effects: { time: -10, network: 5, cash: -5 },
+            effects: { time: -8, network: 3, cash: -5 },
             consequence: "Burns time, buys investor attention.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Focus purely on cashflow.",
-            effects: { time: 5, network: 0, cash: 5 },
+            effects: { time: -5, network: 0, cash: 8 },
             consequence: "If sales fail, you'll scramble for funding unprepared.",
             progressIncrease: 8
           }
@@ -1029,14 +1030,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Spend two more weeks reworking vision.",
-            effects: { time: -15, network: 0, cash: -5 },
+            effects: { time: -12, network: 0, cash: -5 },
             consequence: "Might save your fundraise.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Ignore it, push forward.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 2, network: -3, cash: 0 },
             consequence: "Faster to market, but shallow story might kill deals.",
             progressIncrease: 8
           }
@@ -1050,14 +1051,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Clean it up first. Delay meetings.",
-            effects: { time: -10, network: 5, cash: -5 },
+            effects: { time: -8, network: 3, cash: -5 },
             consequence: "Looks pro, might run out of time.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Meet now, hope they buy potential.",
-            effects: { time: 5, network: 0, cash: 0 },
+            effects: { time: 0, network: 0, cash: 0 },
             consequence: "Fast. Might get grilled.",
             progressIncrease: 8
           }
@@ -1071,14 +1072,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Improvise passionately.",
-            effects: { time: -5, network: 10, cash: 0 },
+            effects: { time: -3, network: 8, cash: 0 },
             consequence: "Charisma saves for now.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Admit it's early, promise a better moat later.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Honesty risks scaring them off.",
             progressIncrease: 8
           }
@@ -1092,14 +1093,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Pull a weekend crunch to build it.",
-            effects: { time: -15, network: 0, cash: -5 },
+            effects: { time: -12, network: 0, cash: -5 },
             consequence: "Professional. Exhausting.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Send a high-level sheet, hope it's enough.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -8, cash: 0 },
             consequence: "Might look amateur.",
             progressIncrease: 8
           }
@@ -1113,14 +1114,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Offer huge discounts to spike user count short-term.",
-            effects: { time: -10, network: 0, cash: -20 },
+            effects: { time: -8, network: 0, cash: -25 },
             consequence: "Pretty metrics, maybe unsustainable.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Say no, keep growth organic.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Long-term health. Might lose deal.",
             progressIncrease: 8
           }
@@ -1134,14 +1135,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Coach them for days, delaying next meetings.",
-            effects: { time: -10, network: 5, cash: 0 },
+            effects: { time: -8, network: 5, cash: 0 },
             consequence: "Team looks aligned.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Push them in as-is, stay on schedule.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Risk a disaster pitch.",
             progressIncrease: 8
           }
@@ -1155,14 +1156,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Take it. Get money, lose control.",
-            effects: { time: -5, network: 5, cash: 50 },
+            effects: { time: -3, network: 3, cash: 40 },
             consequence: "Live to fight. But cap table suffers.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Counter at 20%, risk losing them.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -8, cash: 0 },
             consequence: "Hold your ground, might walk.",
             progressIncrease: 8
           }
@@ -1176,14 +1177,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Push back, spend another month negotiating.",
-            effects: { time: -20, network: -5, cash: 0 },
+            effects: { time: -15, network: -3, cash: 0 },
             consequence: "Clean deal if they stay. Might scare them.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Accept it, close fast.",
-            effects: { time: 5, network: 0, cash: 50 },
+            effects: { time: 0, network: 0, cash: 35 },
             consequence: "Money now. Future nightmare.",
             progressIncrease: 8
           }
@@ -1197,14 +1198,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Accept governance controls.",
-            effects: { time: -5, network: 5, cash: 20 },
+            effects: { time: -3, network: 3, cash: 20 },
             consequence: "Money flows. You lose strategic freedom.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Decline, risk scuttling the deal.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -8, cash: 0 },
             consequence: "Keep control. Maybe starve.",
             progressIncrease: 8
           }
@@ -1218,14 +1219,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Come clean, show how you'll fix it.",
-            effects: { time: -10, network: 5, cash: -10 },
+            effects: { time: -8, network: 3, cash: -10 },
             consequence: "Risk losing deal. Builds credibility.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Blame data glitch, buy time.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Might close. Might backfire spectacularly.",
             progressIncrease: 8
           }
@@ -1239,14 +1240,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Sign it. Bet everything.",
-            effects: { time: -5, network: 0, cash: 100 },
+            effects: { time: -3, network: 0, cash: 60 },
             consequence: "Win big. Or lose your house.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Refuse. Walk away.",
-            effects: { time: 5, network: -20, cash: 0 },
+            effects: { time: 0, network: -15, cash: 0 },
             consequence: "Protect your life. Startup might die.",
             progressIncrease: 8
           }
@@ -1267,14 +1268,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Hire a seasoned COO.",
-            effects: { time: -15, network: 10, cash: -30 },
+            effects: { time: -12, network: 8, cash: -35 },
             consequence: "Burn goes up. Operations might soar.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Stay scrappy, keep full control.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Cheap. Risk imploding under chaos.",
             progressIncrease: 8
           }
@@ -1288,14 +1289,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Greenlight global expansion.",
-            effects: { time: -20, network: 20, cash: -40 },
+            effects: { time: -20, network: 15, cash: -50 },
             consequence: "Big swing. Might overextend.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Focus on dominating local first.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Safer. Might miss global window.",
             progressIncrease: 8
           }
@@ -1309,14 +1310,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Overhaul pricing model.",
-            effects: { time: -15, network: 5, cash: -10 },
+            effects: { time: -12, network: 3, cash: -12 },
             consequence: "Might save retention. Confuses loyal customers.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Keep current model.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -8, cash: 0 },
             consequence: "Steady. Might bleed out slowly.",
             progressIncrease: 8
           }
@@ -1330,14 +1331,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Start serious talks.",
-            effects: { time: -10, network: 10, cash: 0 },
+            effects: { time: -8, network: 8, cash: 0 },
             consequence: "Team might get jobs. Your product dies.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Refuse. Keep independent path.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -8, cash: 0 },
             consequence: "Vision intact. Risk total failure.",
             progressIncrease: 8
           }
@@ -1351,14 +1352,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Acquire them.",
-            effects: { time: -30, network: 15, cash: -50 },
+            effects: { time: -25, network: 12, cash: -60 },
             consequence: "Massive stretch. Might supercharge scale.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Say no. Conserve cash.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Stay lean. Might get outflanked.",
             progressIncrease: 8
           }
@@ -1372,14 +1373,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Do a painful reorg, replacing half the acquired team.",
-            effects: { time: -20, network: -10, cash: -10 },
+            effects: { time: -15, network: -8, cash: -15 },
             consequence: "Culture resets. Bad PR risk.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Try to blend cultures, give it time.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Might mellow out. Or explode later.",
             progressIncrease: 8
           }
@@ -1393,14 +1394,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Clone & ship fast.",
-            effects: { time: -15, network: 5, cash: -20 },
+            effects: { time: -12, network: 3, cash: -25 },
             consequence: "Catch wave. Risk stability.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Ignore it. Stick to your core differentiators.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Might look stale.",
             progressIncrease: 8
           }
@@ -1414,14 +1415,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Hire bankers, start prepping an exit.",
-            effects: { time: -15, network: 15, cash: -10 },
+            effects: { time: -12, network: 12, cash: -15 },
             consequence: "Signals market. Costs big.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Hold off. Try to grow into unicorn status.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -8, cash: 0 },
             consequence: "High stakes patience.",
             progressIncrease: 8
           }
@@ -1435,14 +1436,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Offer discounts to diversify clients.",
-            effects: { time: -15, network: 5, cash: -20 },
+            effects: { time: -12, network: 3, cash: -25 },
             consequence: "Might broaden base. Hurts short-term cash.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Do nothing, hope market overlooks it.",
-            effects: { time: 5, network: -5, cash: 0 },
+            effects: { time: 0, network: -3, cash: 0 },
             consequence: "Risk deal tanking.",
             progressIncrease: 8
           }
@@ -1456,14 +1457,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Negotiate softer terms, risk pushing them away.",
-            effects: { time: -10, network: -5, cash: 0 },
+            effects: { time: -8, network: -3, cash: 0 },
             consequence: "Might lose buyer. Might protect sanity.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Accept tough earn-out.",
-            effects: { time: 5, network: 5, cash: 50 },
+            effects: { time: 0, network: 3, cash: 35 },
             consequence: "Locked golden handcuffs.",
             progressIncrease: 8
           }
@@ -1477,14 +1478,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Call an all-hands, promise retention bonuses.",
-            effects: { time: -10, network: 10, cash: -30 },
+            effects: { time: -8, network: 8, cash: -40 },
             consequence: "Buys loyalty. Expensive.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Ignore it. Let chips fall.",
-            effects: { time: 5, network: -10, cash: 0 },
+            effects: { time: 0, network: -8, cash: 0 },
             consequence: "Might cause team exodus.",
             progressIncrease: 8
           }
@@ -1498,14 +1499,14 @@ export const ARCS: Arc[] = [
           {
             id: 1,
             text: "Sign it. Take the money, leave your playground.",
-            effects: { time: -5, network: 0, cash: 100 },
+            effects: { time: -3, network: 0, cash: 80 },
             consequence: "Personal freedom crushed. Bank account glows.",
             progressIncrease: 8
           },
           {
             id: 2,
             text: "Walk away from the exit.",
-            effects: { time: 10, network: -20, cash: 0 },
+            effects: { time: 5, network: -15, cash: 0 },
             consequence: "Stay true to future possibilities. Maybe risk everything.",
             progressIncrease: 8
           }
