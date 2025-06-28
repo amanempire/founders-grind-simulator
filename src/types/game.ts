@@ -1002,29 +1002,253 @@ export const ARCS: Arc[] = [
     scenarios: [
       {
         id: 1,
-        title: "The Pitch",
-        description: "VCs are interested. Multiple term sheets on the table:",
+        title: "You've been running lean, with 3 months of runway left.",
+        description: "Do you start prepping a pitch deck now, or focus solely on revenue to extend runway?",
         choices: [
           {
             id: 1,
-            text: "Take the highest valuation offer",
-            effects: { time: -10, network: 10, cash: 40 },
-            consequence: "Money now, control later.",
-            progressIncrease: 35
+            text: "Start prepping deck.",
+            effects: { time: -10, network: 5, cash: -5 },
+            consequence: "Burns time, buys investor attention.",
+            progressIncrease: 8
           },
           {
             id: 2,
-            text: "Choose the most strategic investor",
-            effects: { time: -15, network: 25, cash: 25 },
-            consequence: "Strategic value beyond money.",
-            progressIncrease: 40
+            text: "Focus purely on cashflow.",
+            effects: { time: 5, network: 0, cash: 5 },
+            consequence: "If sales fail, you'll scramble for funding unprepared.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 2,
+        title: "With the deck drafted, a mentor reviews it.",
+        description: "They're brutally honest: \"Your story's weak. You're selling features, not a dream.\"",
+        choices: [
+          {
+            id: 1,
+            text: "Spend two more weeks reworking vision.",
+            effects: { time: -15, network: 0, cash: -5 },
+            consequence: "Might save your fundraise.",
+            progressIncrease: 8
           },
           {
-            id: 3,
-            text: "Bootstrap longer to maintain control",
-            effects: { time: -20, network: 0, cash: -10 },
-            consequence: "Independence has its price.",
-            progressIncrease: 30
+            id: 2,
+            text: "Ignore it, push forward.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Faster to market, but shallow story might kill deals.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 3,
+        title: "You finally get intros to two VCs.",
+        description: "Both want to see live traction dashboards. But your analytics are messy.",
+        choices: [
+          {
+            id: 1,
+            text: "Clean it up first. Delay meetings.",
+            effects: { time: -10, network: 5, cash: -5 },
+            consequence: "Looks pro, might run out of time.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Meet now, hope they buy potential.",
+            effects: { time: 5, network: 0, cash: 0 },
+            consequence: "Fast. Might get grilled.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 4,
+        title: "At your first VC meeting, they push hard on \"What makes you irreplaceable?\"",
+        description: "You realize your moat slide is weak.",
+        choices: [
+          {
+            id: 1,
+            text: "Improvise passionately.",
+            effects: { time: -5, network: 10, cash: 0 },
+            consequence: "Charisma saves for now.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Admit it's early, promise a better moat later.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Honesty risks scaring them off.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 5,
+        title: "A follow-up email comes:",
+        description: "\"Send us your detailed financial model by Monday.\" You don't really have one yet.",
+        choices: [
+          {
+            id: 1,
+            text: "Pull a weekend crunch to build it.",
+            effects: { time: -15, network: 0, cash: -5 },
+            consequence: "Professional. Exhausting.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Send a high-level sheet, hope it's enough.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Might look amateur.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 6,
+        title: "VCs circle back. One says privately:",
+        description: "\"If you had twice the user growth, we'd cut you a term sheet now. Any creative ideas?\"",
+        choices: [
+          {
+            id: 1,
+            text: "Offer huge discounts to spike user count short-term.",
+            effects: { time: -10, network: 0, cash: -20 },
+            consequence: "Pretty metrics, maybe unsustainable.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Say no, keep growth organic.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Long-term health. Might lose deal.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 7,
+        title: "One investor wants to meet your team.",
+        description: "But your CTO is notoriously shy & might bomb under pressure.",
+        choices: [
+          {
+            id: 1,
+            text: "Coach them for days, delaying next meetings.",
+            effects: { time: -10, network: 5, cash: 0 },
+            consequence: "Team looks aligned.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Push them in as-is, stay on schedule.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Risk a disaster pitch.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 8,
+        title: "The meeting gets tense. The investor says:",
+        description: "\"We like you. But we want a bigger equity chunk than normal. 30% for this round.\"",
+        choices: [
+          {
+            id: 1,
+            text: "Take it. Get money, lose control.",
+            effects: { time: -5, network: 5, cash: 50 },
+            consequence: "Live to fight. But cap table suffers.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Counter at 20%, risk losing them.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Hold your ground, might walk.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 9,
+        title: "Your lawyer flags ugly clauses in the term sheet:",
+        description: "liquidation preferences that could wipe you out on a low exit.",
+        choices: [
+          {
+            id: 1,
+            text: "Push back, spend another month negotiating.",
+            effects: { time: -20, network: -5, cash: 0 },
+            consequence: "Clean deal if they stay. Might scare them.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Accept it, close fast.",
+            effects: { time: 5, network: 0, cash: 50 },
+            consequence: "Money now. Future nightmare.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 10,
+        title: "They agree to amend terms.",
+        description: "But now they want a board seat and veto rights on future pivots.",
+        choices: [
+          {
+            id: 1,
+            text: "Accept governance controls.",
+            effects: { time: -5, network: 5, cash: 20 },
+            consequence: "Money flows. You lose strategic freedom.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Decline, risk scuttling the deal.",
+            effects: { time: 5, network: -10, cash: 0 },
+            consequence: "Keep control. Maybe starve.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 11,
+        title: "At final diligence, they discover your retention is only 30% — much worse than your deck implied.",
+        description: "The lead partner calls.",
+        choices: [
+          {
+            id: 1,
+            text: "Come clean, show how you'll fix it.",
+            effects: { time: -10, network: 5, cash: -10 },
+            consequence: "Risk losing deal. Builds credibility.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Blame data glitch, buy time.",
+            effects: { time: 5, network: -5, cash: 0 },
+            consequence: "Might close. Might backfire spectacularly.",
+            progressIncrease: 8
+          }
+        ]
+      },
+      {
+        id: 12,
+        title: "Finally, the partner emails:",
+        description: "\"We're ready to sign. But we want a personal guarantee on this round's milestones.\" That means your personal assets are on the line if you miss targets.",
+        choices: [
+          {
+            id: 1,
+            text: "Sign it. Bet everything.",
+            effects: { time: -5, network: 0, cash: 100 },
+            consequence: "Win big. Or lose your house.",
+            progressIncrease: 8
+          },
+          {
+            id: 2,
+            text: "Refuse. Walk away.",
+            effects: { time: 5, network: -20, cash: 0 },
+            consequence: "Protect your life. Startup might die.",
+            progressIncrease: 8
           }
         ]
       }
